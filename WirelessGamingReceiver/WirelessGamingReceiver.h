@@ -34,12 +34,12 @@ class WirelessDevice;
 typedef struct WIRELESS_CONNECTION
 {
     // Controller
-    IOUSBInterface *controller;
-    IOUSBPipe *controllerIn, *controllerOut;
+    IOUSBHostInterface *controller;
+    IOUSBHostPipe *controllerIn, *controllerOut;
 
     // Mystery
-    IOUSBInterface *other;
-    IOUSBPipe *otherIn, *otherOut;
+    IOUSBHostInterface *other;
+    IOUSBHostPipe *otherIn, *otherOut;
 
     // Runtime data
     OSArray *inputArray;
