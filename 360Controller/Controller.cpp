@@ -21,8 +21,8 @@
  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
-#include <IOKit/usb/IOUSBHostDevice.h>
-//#include <IOKit/usb/IOUSBInterface.h>
+#include <IOKit/usb/IOUSBDevice.h>
+#include <IOKit/usb/IOUSBInterface.h>
 #include "Controller.h"
 namespace HID_360 {
 #include "xbox360hid.h"
@@ -152,7 +152,7 @@ OSString* Xbox360ControllerClass::getDeviceString(UInt8 index,const char *def) c
     IOReturn err;
     char buf[1024];
     const char *string;
-    GetOwnerProvider(this)->get
+
     err = GetOwnerProvider(this)->GetStringDescriptor(index, buf, sizeof(buf));
     if(err==kIOReturnSuccess) string=buf;
     else {

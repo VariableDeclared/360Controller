@@ -52,7 +52,7 @@ public:
 };
 
 // Find the maximum packet size of this pipe
-static UInt32 GetMaxPacketSize(*pipe)
+static UInt32 GetMaxPacketSize(IOUSBPipe *pipe)
 {
     const IOUSBEndpointDescriptor *ed = pipe->GetEndpointDescriptor();
 
@@ -64,7 +64,7 @@ void Xbox360Peripheral::SendSpecial(UInt16 value)
 {
     IOUSBDevRequest controlReq;
 
-    controlReq.bmRequestType = USBmakebmRequestType(kIOUSBEndpointDirectionOut, kIOUSBDeviceRequestTypeValueVendor, kIOUSBDeviceRequestRecipientValueInterface);
+    controlReq.bmRequestType = USBmakebmRequestType(kUSBOut, kUSBVendor, kUSBInterface);
     controlReq.bRequest = 0x00;
     controlReq.wValue = value;
     controlReq.wIndex = 0x0002;
@@ -78,7 +78,7 @@ void Xbox360Peripheral::SendInit(UInt16 value, UInt16 index)
 {
     IOUSBDevRequest controlReq;
 
-    controlReq.bmRequestType = USBmakebmRequestType(kIOUSBEndpointDirectionOut, kIOUSBDeviceRequestTypeValueVendor, kIOUSBDeviceRequestRecipientValueDevice);
+    controlReq.bmRequestType = USBmakebmRequestType(kUSBOut, kUSBVendor, kUSBDevice);
     controlReq.bRequest = 0xa9;
     controlReq.wValue = value;
     controlReq.wIndex = index;
@@ -91,7 +91,7 @@ bool Xbox360Peripheral::SendSwitch(bool sendOut)
 {
     IOUSBDevRequest controlReq;
 
-    controlReq.bmRequestType = USBmakebmRequestType(sendOut ? kIOUSBEndpointDirectionOut : kIOUSBEndpointDirectionIn, kIOUSBDeviceRequestTypeValueVendor, kIOUSBDeviceRequestRecipientValueDevice);
+    controlReq.bmRequestType = USBmakebmRequestType(sendOut ? kUSBOut : kUSBIn, kUSBVendor, kUSBDevice);
     controlReq.bRequest = 0xa1;
     controlReq.wValue = 0x0000;
     controlReq.wIndex = 0xe416;
@@ -434,7 +434,7 @@ bool Xbox360Peripheral::start(IOService *provider)
 interfacefound:
     interface->open(this);
     // Find pipes
-    pipe.direction=kIOUSBEndpointDirectionOut;
+    pipe.direction=kUSBIn;
     pipe.interval=0;
     pipe.type=kUSBInterrupt;
     pipe.maxPacketSize=0;
@@ -444,7 +444,7 @@ interfacefound:
         goto fail;
     }
     inPipe->retain();
-    pipe.direction=kIOUSBEndpointDirectionOut;
+    pipe.direction=kUSBOut;
     outPipe=interface->FindNextPipe(NULL,&pipe);
     if(outPipe==NULL) {
         IOLog("start - unable to find out pipe\n");
@@ -469,7 +469,7 @@ interfacefound:
     }
     serialIn->open(this);
     // Find chatpad pipe
-    pipe.direction = kIOUSBEndpointDirectionOut;
+    pipe.direction = kUSBIn;
     pipe.interval = 0;
     pipe.type = kUSBInterrupt;
     pipe.maxPacketSize = 0;
