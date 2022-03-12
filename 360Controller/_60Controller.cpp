@@ -54,7 +54,7 @@ public:
 // Find the maximum packet size of this pipe
 static UInt32 GetMaxPacketSize(IOUSBPipe *pipe)
 {
-    const IOUSBEndpointDescriptor *ed = pipe->GetEndpointDescriptor();
+    const StandardUSB::EndpointDescriptor *ed = pipe->getEndpointDescriptor();
 
     if(ed==NULL) return 0;
     else return ed->wMaxPacketSize;
@@ -65,12 +65,14 @@ void Xbox360Peripheral::SendSpecial(UInt16 value)
     IOUSBDevRequest controlReq;
 
     controlReq.bmRequestType = USBmakebmRequestType(kUSBOut, kUSBVendor, kUSBInterface);
+
     controlReq.bRequest = 0x00;
     controlReq.wValue = value;
     controlReq.wIndex = 0x0002;
     controlReq.wLength = 0;
-    controlReq.pData = NULL;
-    if (device->DeviceRequest(&controlReq, 100, 100, NULL) != kIOReturnSuccess)
+//    controlReq.pData = NULL;
+    
+    if (device->deviceRequest(&controlReq, NULL, NULL, 100) != kIOReturnSuccess)
         IOLog("Failed to send special message %.4x\n", value);
 }
 
@@ -354,7 +356,7 @@ bool Xbox360Peripheral::start(IOService *provider)
     if (!super::start(provider))
         return false;
     // Get device
-    device=OSDynamicCast(IOUSBDevice,provider);
+    device=OSDynamicCast(IOUSBHostDevice,provider);
     if(device==NULL) {
         IOLog("start - invalid provider\n");
         goto fail;

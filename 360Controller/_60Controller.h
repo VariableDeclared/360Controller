@@ -24,8 +24,10 @@
 #define __XBOX360CONTROLLER_H__
 
 #include <IOKit/hid/IOHIDDevice.h>
-#include <IOKit/usb/IOUSBDevice.h>
-#include <IOKit/usb/IOUSBInterface.h>
+#include <IOKit/usb/USB.h>
+#include <IOKit/usb/IOUSBLib.h>
+
+
 #include "ControlStruct.h"
 
 class Xbox360ControllerClass;
@@ -82,17 +84,17 @@ protected:
         XboxOnePretend360 = 3,
         Xbox360Pretend360 = 4,
     } CONTROLLER_TYPE;
-
-    IOUSBDevice *device;
+    
+    IOUSBDeviceInterface *device;
     IOLock *mainLock;
 
     // Joypad
-    IOUSBInterface *interface;
+    IOUSBDeviceInterface *interface;
     IOUSBPipe *inPipe,*outPipe;
     IOBufferMemoryDescriptor *inBuffer;
 
     // Keyboard
-    IOUSBInterface *serialIn;
+    IOUSBDeviceInterface *serialIn;
     IOUSBPipe *serialInPipe;
     IOBufferMemoryDescriptor *serialInBuffer;
     IOTimerEventSource *serialTimer;

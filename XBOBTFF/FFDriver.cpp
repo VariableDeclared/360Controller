@@ -15,11 +15,12 @@
 using std::max;
 using std::min;
 
-static bool goodProbe(io_service_t theService)
+static  bool goodProbe(io_service_t theService)
 {
 	if (!IOObjectConformsTo(theService, kIOHIDDeviceKey)) {
 		return false;
 	}
+	
 	CFMutableDictionaryRef dict;
 	
 	IORegistryEntryCreateCFProperties(theService, &dict, kCFAllocatorDefault, 0);
