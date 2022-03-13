@@ -27,7 +27,6 @@
 #include <IOKit/usb/USB.h>
 #include <IOKit/usb/IOUSBLib.h>
 
-
 #include "ControlStruct.h"
 
 class Xbox360ControllerClass;

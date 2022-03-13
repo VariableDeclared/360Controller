@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXAggregateTarget section */
@@ -101,7 +101,6 @@
 		622A73CF1A7C879300784C02 /* BindingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 622A73CD1A7C879300784C02 /* BindingTableView.m */; };
 		83AD75C627DD385800E11F75 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83AD75C527DD385800E11F75 /* CoreFoundation.framework */; };
 		83AD75CF27DD425800E11F75 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83AD75C327DD383800E11F75 /* IOKit.framework */; platformFilter = maccatalyst; };
-		83AD75D027DD425800E11F75 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83AD75C327DD383800E11F75 /* IOKit.framework */; platformFilter = maccatalyst; };
 		83AD75D127DD425900E11F75 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83AD75C327DD383800E11F75 /* IOKit.framework */; platformFilter = maccatalyst; };
 		83AD75D227DD426600E11F75 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83AD75C327DD383800E11F75 /* IOKit.framework */; platformFilter = maccatalyst; };
 		83AD75D327DD437300E11F75 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83AD75C327DD383800E11F75 /* IOKit.framework */; platformFilter = maccatalyst; };
@@ -110,6 +109,7 @@
 		83AD75D927DD459900E11F75 /* ForceFeedback.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83AD75D527DD448100E11F75 /* ForceFeedback.framework */; };
 		83AD75DA27DD459D00E11F75 /* ForceFeedback.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83AD75D527DD448100E11F75 /* ForceFeedback.framework */; };
 		83AD75DB27DD459E00E11F75 /* ForceFeedback.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83AD75D527DD448100E11F75 /* ForceFeedback.framework */; };
+		83AD75FD27DE6DAA00E11F75 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83AD75C327DD383800E11F75 /* IOKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -330,11 +330,12 @@
 		622A73CC1A7C879300784C02 /* BindingTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BindingTableView.h; sourceTree = "<group>"; };
 		622A73CD1A7C879300784C02 /* BindingTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BindingTableView.m; sourceTree = "<group>"; };
 		62DD3D4920C044980073EC19 /* DeveloperSettings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = DeveloperSettings.xcconfig; sourceTree = SOURCE_ROOT; };
-		83AD75C327DD383800E11F75 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/System/Library/Frameworks/IOKit.framework; sourceTree = DEVELOPER_DIR; };
+		83AD75C327DD383800E11F75 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/System/Library/Frameworks/IOKit.framework; sourceTree = "<absolute>"; };
 		83AD75C527DD385800E11F75 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/System/Library/Frameworks/CoreFoundation.framework; sourceTree = DEVELOPER_DIR; };
 		83AD75C727DD406F00E11F75 /* IOUSBHost.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOUSBHost.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/System/Library/Frameworks/IOUSBHost.framework; sourceTree = DEVELOPER_DIR; };
 		83AD75D527DD448100E11F75 /* ForceFeedback.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ForceFeedback.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/System/Library/Frameworks/ForceFeedback.framework; sourceTree = DEVELOPER_DIR; };
 		83AD75D727DD454300E11F75 /* DriverKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DriverKit.framework; path = System/Library/Frameworks/DriverKit.framework; sourceTree = SDKROOT; };
+		83AD75FA27DE67F400E11F75 /* Kernel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kernel.framework; path = System/Library/Frameworks/Kernel.framework; sourceTree = SDKROOT; };
 		96A383052223A4FA00A27767 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		96A383062223A4FA00A27767 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		96A383072223A4FA00A27767 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
@@ -369,8 +370,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				83AD75D027DD425800E11F75 /* IOKit.framework in Frameworks */,
 				83AD75D927DD459900E11F75 /* ForceFeedback.framework in Frameworks */,
+				83AD75FD27DE6DAA00E11F75 /* IOKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -706,6 +707,7 @@
 		83AD75C227DD383800E11F75 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				83AD75FA27DE67F400E11F75 /* Kernel.framework */,
 				83AD75D727DD454300E11F75 /* DriverKit.framework */,
 				83AD75D527DD448100E11F75 /* ForceFeedback.framework */,
 				83AD75C727DD406F00E11F75 /* IOUSBHost.framework */,
@@ -1016,7 +1018,7 @@
 				};
 			};
 			buildConfigurationList = 55B636AF18C104DB00CE933D /* Build configuration list for PBXProject "360 Driver" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -1616,19 +1618,32 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 62DD3D4920C044980073EC19 /* DeveloperSettings.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				"CLANG_CXX_LANGUAGE_STANDARD[arch=i386]" = "compiler-default";
+				CLANG_WARN_FRAMEWORK_INCLUDE_PRIVATE_FROM_PUBLIC = NO;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO;
 				CODE_SIGN_IDENTITY = "Apple Development: Peter De Sousa (Y2LC8835PC)";
 				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = YES;
 				CODE_SIGN_STYLE = Manual;
+				FRAMEWORK_SEARCH_PATHS = "";
+				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
+				GCC_USE_STANDARD_INCLUDE_SEARCHING = NO;
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = 360Controller/Info.plist;
+				MACOSX_DEPLOYMENT_TARGET = 12.2;
 				MODULE_NAME = com.mice.driver.Xbox360Controller;
 				MODULE_VERSION = "${CURRENT_PROJECT_VERSION}";
 				OTHER_LDFLAGS = (
 					"-framework",
 					IOKit,
 				);
+				PRIVATE_HEADERS_FOLDER_PATH = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = NO;
 				SDKROOT = macosx;
+				SYSTEM_HEADER_SEARCH_PATHS = "";
+				USER_HEADER_SEARCH_PATHS = "";
 				WRAPPER_EXTENSION = kext;
 			};
 			name = Debug;
@@ -1637,19 +1652,32 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 62DD3D4920C044980073EC19 /* DeveloperSettings.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				"CLANG_CXX_LANGUAGE_STANDARD[arch=i386]" = "compiler-default";
+				CLANG_WARN_FRAMEWORK_INCLUDE_PRIVATE_FROM_PUBLIC = NO;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO;
 				CODE_SIGN_IDENTITY = "Apple Development: Peter De Sousa (Y2LC8835PC)";
 				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = YES;
 				CODE_SIGN_STYLE = Manual;
+				FRAMEWORK_SEARCH_PATHS = "";
+				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
+				GCC_USE_STANDARD_INCLUDE_SEARCHING = NO;
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = 360Controller/Info.plist;
+				MACOSX_DEPLOYMENT_TARGET = 12.2;
 				MODULE_NAME = com.mice.driver.Xbox360Controller;
 				MODULE_VERSION = "${CURRENT_PROJECT_VERSION}";
 				OTHER_LDFLAGS = (
 					"-framework",
 					IOKit,
 				);
+				PRIVATE_HEADERS_FOLDER_PATH = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = NO;
 				SDKROOT = macosx;
+				SYSTEM_HEADER_SEARCH_PATHS = "";
+				USER_HEADER_SEARCH_PATHS = "";
 				WRAPPER_EXTENSION = kext;
 			};
 			name = Release;
@@ -1667,6 +1695,12 @@
 				INFOPLIST_FILE = Feedback360/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
 				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = (
+					"-framework",
+					CoreFoundation,
+					"-framework",
+					IOKit,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
@@ -1687,6 +1721,12 @@
 				EXPORTED_SYMBOLS_FILE = Feedback360/Feedback360.exp;
 				INFOPLIST_FILE = Feedback360/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					CoreFoundation,
+					"-framework",
+					IOKit,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
